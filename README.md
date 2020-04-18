@@ -1,6 +1,6 @@
-# Dice Roller React
+# Inch-Feet-React
 
-This is a web app that allows you to roll virtual dice, created using React 
+This is a web app that allows you to convert measurements, created using React 
 
 # Objectives
 
@@ -25,26 +25,34 @@ This is a web app that allows you to roll virtual dice, created using React
 
 ## Featured Code
 
-### Main App Component Mapping Over Array Creating 'Dice' Components
+### Render Function
 
 ```JSX
-export class App extends Component {
-  state = {
-    dice: [20, 12, 10, 8, 4, 100],
-  }
-
-  render() {
+render() {
     return (
       <main>
-        {this.state.dice.map((dice) => {
-          return <Dice numberOfSides={dice} />
-        })}
+        <select onChange={this.setFrom} id="length">
+          <option value="">From</option>
+          <option value="63360">Miles</option>
+          <option value="36">Yard</option>
+          <option value="12">Feet</option>
+          <option value="1">Inches</option>
+        </select>
+        <select onChange={this.setTo} id="length">
+          <option value="">To</option>
+          <option value="1">Inches</option>
+          <option value="12">Feet</option>
+          <option value="36">Yard</option>
+          <option value="63360">Miles</option>
+        </select>
+        <input
+          placeholder="Put number here"
+          onChange={this.convert}
+          type="text"
+        />
+        <p>Result: {this.state.answer}</p>
       </main>
     )
   }
-}
-
-export default App
-
  ```
  
