@@ -33,21 +33,25 @@ class App extends Component {
     return (
       <main>
         <select onChange={this.setFrom} id="length">
-          <option value=""></option>
+          <option value="">From</option>
           <option value="63360">Miles</option>
           <option value="36">Yard</option>
           <option value="12">Feet</option>
           <option value="1">Inches</option>
         </select>
         <select onChange={this.setTo} id="length">
-          <option value=""></option>
+          <option value="">To</option>
           <option value="1">Inches</option>
           <option value="12">Feet</option>
           <option value="36">Yard</option>
           <option value="63360">Miles</option>
         </select>
-        <input onChange={this.convert} type="text" />
-        <p>{this.state.answer}</p>
+        <input
+          placeholder="Put number here"
+          onChange={this.convert}
+          type="text"
+        />
+        <p>Result: {this.state.answer}</p>
       </main>
     )
   }
